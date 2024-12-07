@@ -1,0 +1,4165 @@
+{
+	"permissions": [
+		{
+			"configure": ".*",
+			"read": ".*",
+			"user": "guest",
+			"vhost": "/",
+			"write": ".*"
+		}
+	],
+	"bindings": [
+		{
+			"arguments": {},
+			"destination": "CreateTicketFromAzure",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "CreateTicketFromAzure",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.FileMoved",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.FileMoved",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.ImageError",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.ImageError",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.ProcessExtract",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.ProcessExtract",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.ProcessExtract_error",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.ProcessExtract_error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.RetryExtractImage",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.RetryExtractImage",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.SftpSent",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.SftpSent",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.SftpSent_error",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "DocumentUpload:DocumentUpload.SftpSent_error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "MassTransit:Fault",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "MassTransit:Fault--Premier.DocumentUpload.Application.Contracts:IDocumentUploadImageMoved--",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "MassTransit:Fault",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "MassTransit:Fault--Premier.DocumentUpload.Domain.Contracts:IDocumentSetSavedDomainEvent--",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "MassTransit:Fault",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "MassTransit:Fault--Premier.DocumentUpload.Domain.Contracts:IDocumentSetSftpSentDomainEvent--",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "MassTransit:Fault",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "MassTransit:ReceiveFault",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "Notes:DocumentUploadImageMoved",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "Notes:DocumentUploadImageMoved",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "Notes:DocumentUploadImageMoved_error",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "Notes:DocumentUploadImageMoved_error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "Notes:EnterAccountNote",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "Notes:EnterAccountNote",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "bplRecon.recon.process",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.BusinessProcessLogRecon.Services:ReconReady",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "Notes:DocumentUploadImageMoved",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Application.Contracts:IDocumentUploadImageMoved",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.RetryExtractImage",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Application.Contracts:IRetryExtract",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.ImageError",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetErrorDomainEvent",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.ProcessExtract",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetSavedDomainEvent",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.SftpSent",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetSftpSentDomainEvent",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "DocumentUpload:DocumentUpload.FileMoved",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.DocumentUpload.Domain.Contracts:IDocumentUploadImageMovedDomainEvent",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "Notes:EnterAccountNote",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "Premier.Notes.Application.Contracts:IEnterAccountNoteCommand",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "CreateTicketFromAzure",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "PremierDevOpsWorker.ApplicationMessages.Ado:CreateTicketFromAzureCommand",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acdv.acdvSync.process",
+			"destination_type": "queue",
+			"routing_key": "acdv.process",
+			"source": "acdv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acdv.recon.process",
+			"destination_type": "queue",
+			"routing_key": "acdvReceipt.process",
+			"source": "acdv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acdv.audCreate.add",
+			"destination_type": "queue",
+			"routing_key": "aud.add",
+			"source": "acdv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acdv.audCreate.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.aud.add",
+			"source": "acdv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acdv.audReceipt.process.error",
+			"destination_type": "queue",
+			"routing_key": "error.audReceipt.process",
+			"source": "acdv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.additionalCard.insert.error",
+			"destination_type": "queue",
+			"routing_key": "additionalCard.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.authUser.insert.error",
+			"destination_type": "queue",
+			"routing_key": "authUser.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.batchApp.insert.error",
+			"destination_type": "queue",
+			"routing_key": "batchApp.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.batchGL.insert.error",
+			"destination_type": "queue",
+			"routing_key": "batchGL.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.bureau.insert",
+			"destination_type": "queue",
+			"routing_key": "bureau.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.bureau.insert.error",
+			"destination_type": "queue",
+			"routing_key": "bureau.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.crAccts.insert.error",
+			"destination_type": "queue",
+			"routing_key": "crAccts.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.creditQueue.insert.error",
+			"destination_type": "queue",
+			"routing_key": "creditQueue.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.debtTransfer.insert.error",
+			"destination_type": "queue",
+			"routing_key": "debtTransfer.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.decisionData.insert.error",
+			"destination_type": "queue",
+			"routing_key": "decisionData.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.preciseIdData.insert",
+			"destination_type": "queue",
+			"routing_key": "decisionOnDemand.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.email.send.error",
+			"destination_type": "queue",
+			"routing_key": "email.send.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.employer.insert.error",
+			"destination_type": "queue",
+			"routing_key": "employer.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.mktrQueue.insert.error",
+			"destination_type": "queue",
+			"routing_key": "error.mktrQueue.insert",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.fraudVelocity.insert",
+			"destination_type": "queue",
+			"routing_key": "fraudVelocity.insert",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.fraudVelocity.insert.error",
+			"destination_type": "queue",
+			"routing_key": "fraudVelocity.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.innovis.insert.error",
+			"destination_type": "queue",
+			"routing_key": "innovis.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.mktrQueue.insert",
+			"destination_type": "queue",
+			"routing_key": "mktrQueue.insert",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.note.insert.error",
+			"destination_type": "queue",
+			"routing_key": "note.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.optOutApplicant.insert.error",
+			"destination_type": "queue",
+			"routing_key": "optOutApplicant.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.payment.insert.error",
+			"destination_type": "queue",
+			"routing_key": "payment.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.pcpProtection.insert.error",
+			"destination_type": "queue",
+			"routing_key": "pcpProtection.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.preciseIdData.insert.error",
+			"destination_type": "queue",
+			"routing_key": "preciseIdData.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.additionalCard.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.authUser.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.batchApp.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.batchGL.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.bureau.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.crAccts.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.creditQueue.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.debtTransfer.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.decisionData.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.email.send",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.employer.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.fraudVelocity.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.innovis.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.note.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.optOutApplicant.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.payment.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.pcpProtection.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.preciseIdData.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.rsaEnroll.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.tapeInfo.insert",
+			"destination_type": "queue",
+			"routing_key": "relatedInfo.create",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.rsaEnroll.insert.error",
+			"destination_type": "queue",
+			"routing_key": "rsaEnroll.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.tapeInfo.insert.error",
+			"destination_type": "queue",
+			"routing_key": "tapeInfo.insert.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.transactionHistory.add",
+			"destination_type": "queue",
+			"routing_key": "transactionHistory.add",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.transactionHistory.add.error",
+			"destination_type": "queue",
+			"routing_key": "transactionHistory.add.error",
+			"source": "acquisition",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "bplRecon.recon.process",
+			"destination_type": "exchange",
+			"routing_key": "",
+			"source": "bplRecon",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "bplRecon.recon.process",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "bplRecon.recon.process",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.address.addOrUpdate",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.Address",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.ccpa.processCcpa",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.CCPA",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.contextualMessaging.unenroll",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.ContextualMessagingUnenroll",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "statements.disputeCharge.createCase",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.DisputeCharge",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.enrollEDelivery",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.EDeliveryEnrollment",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "letters.eDelivery.enrollEletters",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.EletterEnrollment",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "statements.eDelivery.enrollEstatements",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.EstatementEnrollment",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.insert",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.RealTimeResponse",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.insert.error",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.RealTimeResponse.error",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.passwordChange.expirePassword",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.ResetOnlinePassword",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.createAccount",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.rtrCreateAccount",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.createAccount.error",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.rtrCreateAccount.error",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.updateStatus",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.rtrUpdateStatus",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "acquisition.realTimeResponse.updateStatus.error",
+			"destination_type": "queue",
+			"routing_key": "bpq.Queued.rtrUpdateStatus.error",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.passwordChange.expirePassword",
+			"destination_type": "queue",
+			"routing_key": "customerPortal.passwordChange.expirePassword",
+			"source": "bpq",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.email.postup.send",
+			"destination_type": "queue",
+			"routing_key": "POSTUP",
+			"source": "com.premier.email",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.email.postup.sent.emailrequest",
+			"destination_type": "queue",
+			"routing_key": "POSTUP.sent",
+			"source": "com.premier.email",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.email.postup.send.error",
+			"destination_type": "queue",
+			"routing_key": "POSTUP",
+			"source": "com.premier.email.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.email.postup.sent.emailrequest.error",
+			"destination_type": "queue",
+			"routing_key": "POSTUP.emailrequest.error",
+			"source": "com.premier.email.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.account",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.account",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.letter",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.letter",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.multacct",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.multacct",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.nonmonqueue",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.nonmonqueue",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.note",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.note",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.ods",
+			"destination_type": "queue",
+			"routing_key": "com.premier.emergencyrelief.enroll.ods",
+			"source": "com.premier.emergencyrelief.enroll",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.account",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "com.premier.emergencyrelief.enroll.all",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.multacct",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "com.premier.emergencyrelief.enroll.all",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.nonmonqueue",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "com.premier.emergencyrelief.enroll.all",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.note",
+			"destination_type": "queue",
+			"routing_key": "",
+			"source": "com.premier.emergencyrelief.enroll.all",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.account",
+			"destination_type": "queue",
+			"routing_key": "account",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.letter",
+			"destination_type": "queue",
+			"routing_key": "letter",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.multacct",
+			"destination_type": "queue",
+			"routing_key": "multacct",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.nonmonqueue",
+			"destination_type": "queue",
+			"routing_key": "nonmonqueue",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.note",
+			"destination_type": "queue",
+			"routing_key": "note",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.emergencyrelief.enroll.error.ods",
+			"destination_type": "queue",
+			"routing_key": "ods",
+			"source": "com.premier.emergencyrelief.enroll.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.note.latitude.add",
+			"destination_type": "queue",
+			"routing_key": "add.latitude.note",
+			"source": "com.premier.note",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.note.add",
+			"destination_type": "queue",
+			"routing_key": "add.note",
+			"source": "com.premier.note",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.note.latitude.add.error",
+			"destination_type": "queue",
+			"routing_key": "add.latitude.note",
+			"source": "com.premier.note.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.note.add.error",
+			"destination_type": "queue",
+			"routing_key": "add.note",
+			"source": "com.premier.note.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.add.reply",
+			"destination_type": "queue",
+			"routing_key": "add.debit.reply",
+			"source": "com.premier.payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.added.consentNote",
+			"destination_type": "queue",
+			"routing_key": "added.debit",
+			"source": "com.premier.payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.fraud.note",
+			"destination_type": "queue",
+			"routing_key": "fraud.debit",
+			"source": "com.premier.payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.fraud.record",
+			"destination_type": "queue",
+			"routing_key": "fraud.debit",
+			"source": "com.premier.payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.updated.consentNote",
+			"destination_type": "queue",
+			"routing_key": "updated.debit",
+			"source": "com.premier.payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.add.error",
+			"destination_type": "queue",
+			"routing_key": "add.debit",
+			"source": "com.premier.payment.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.added.consentNote.error",
+			"destination_type": "queue",
+			"routing_key": "added.debitcard.consentNote",
+			"source": "com.premier.payment.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.fraud.note.error",
+			"destination_type": "queue",
+			"routing_key": "fraud.debit.note.error",
+			"source": "com.premier.payment.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.fraud.record.error",
+			"destination_type": "queue",
+			"routing_key": "fraud.debit.record.error",
+			"source": "com.premier.payment.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.payment.debitcard.updated.consentNote.error",
+			"destination_type": "queue",
+			"routing_key": "updated.debitcard.consentNote",
+			"source": "com.premier.payment.error",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.vendor.sync.lockpath",
+			"destination_type": "queue",
+			"routing_key": "lockpath",
+			"source": "com.premier.vendor.sync",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.vendor.sync.lockpathvenminder",
+			"destination_type": "queue",
+			"routing_key": "lockpathvenminder",
+			"source": "com.premier.vendor.sync",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.vendor.sync.lockpathvenminder.sub",
+			"destination_type": "queue",
+			"routing_key": "subSync",
+			"source": "com.premier.vendor.sync",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "com.premier.vendor.sync.venminder",
+			"destination_type": "queue",
+			"routing_key": "venminder",
+			"source": "com.premier.vendor.sync",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.sendText.send",
+			"destination_type": "queue",
+			"routing_key": "customerCommunication.sendText",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.sendVoice.send",
+			"destination_type": "queue",
+			"routing_key": "customerCommunication.sendVoice",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createAppEmails",
+			"destination_type": "queue",
+			"routing_key": "eDelivery.created",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createEmails",
+			"destination_type": "queue",
+			"routing_key": "eDelivery.created",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createNotes",
+			"destination_type": "queue",
+			"routing_key": "eDelivery.created",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.sendText.send.error",
+			"destination_type": "queue",
+			"routing_key": "error.customerCommunication.sendText",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.sendVoice.send.error",
+			"destination_type": "queue",
+			"routing_key": "error.customerCommunication.sendVoice",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createAppEmails.error",
+			"destination_type": "queue",
+			"routing_key": "error.eDelivery.createAppEmails",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createEmails.error",
+			"destination_type": "queue",
+			"routing_key": "error.eDelivery.createEmails",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.eDelivery.createNotes.error",
+			"destination_type": "queue",
+			"routing_key": "error.eDelivery.createNotes",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.mfaRequested.send.error",
+			"destination_type": "queue",
+			"routing_key": "error.mfa.request",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerCommunication.mfaRequested.send",
+			"destination_type": "queue",
+			"routing_key": "mfa.request",
+			"source": "customerCommunication",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.ccpa.createLetter",
+			"destination_type": "queue",
+			"routing_key": "ccpa.Processed",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.ccpa.createNote",
+			"destination_type": "queue",
+			"routing_key": "ccpa.Processed",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.sendOdsRequest",
+			"destination_type": "queue",
+			"routing_key": "email.updated",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.syncLatitude",
+			"destination_type": "queue",
+			"routing_key": "email.updated",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.writeNote",
+			"destination_type": "queue",
+			"routing_key": "email.updated",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdating.updateEmail",
+			"destination_type": "queue",
+			"routing_key": "email.updating",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.ccpa.createLetter.error",
+			"destination_type": "queue",
+			"routing_key": "error.ccpa.createLetter",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.ccpa.createNote.error",
+			"destination_type": "queue",
+			"routing_key": "error.ccpa.createNote",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.sendOdsRequest.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.updated.sendOdsRequest",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.syncLatitude.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.updated.syncLatitude",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdated.writeNote.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.updated.writeNote",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerInfo.emailUpdating.updateEmail.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.updating",
+			"source": "customerInfo",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.addNote.error",
+			"destination_type": "queue",
+			"routing_key": "error.user.created.addNote",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.sendEmail.error",
+			"destination_type": "queue",
+			"routing_key": "error.user.created.sendEmail",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.updateEmail.error",
+			"destination_type": "queue",
+			"routing_key": "error.user.created.updateEmail",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.addNote",
+			"destination_type": "queue",
+			"routing_key": "user.created",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.sendEmail",
+			"destination_type": "queue",
+			"routing_key": "user.created",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "customerPortal.userCreated.updateEmail",
+			"destination_type": "queue",
+			"routing_key": "user.created",
+			"source": "customerPortal",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fiserv.fdrhitlog.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.fdrhitlog.add",
+			"source": "fiserv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fiserv.fdrhitlog.add",
+			"destination_type": "queue",
+			"routing_key": "fdrhitlog.add",
+			"source": "fiserv",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fraud.fraudRecordInserting.note.error",
+			"destination_type": "queue",
+			"routing_key": "error.fraud.found.note",
+			"source": "fraud",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fraud.fraudRecordInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.fraud.found.record",
+			"source": "fraud",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fraud.fraudRecordInserting.add",
+			"destination_type": "queue",
+			"routing_key": "fraud.found",
+			"source": "fraud",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "fraud.fraudRecordInserting.note",
+			"destination_type": "queue",
+			"routing_key": "fraud.found",
+			"source": "fraud",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.documentInserting.add",
+			"destination_type": "queue",
+			"routing_key": "document.add",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.documentInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "document.add.error",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.barcodeInserting.add",
+			"destination_type": "queue",
+			"routing_key": "document.added",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.imageInserting.add",
+			"destination_type": "queue",
+			"routing_key": "document.added",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.keywordInserting.add",
+			"destination_type": "queue",
+			"routing_key": "document.added",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.barcodeInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "document.added.error",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.imageInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "document.added.error",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.keywordInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "document.added.error",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.barcodeInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.barcode.add",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.documentInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.document.add",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.imageInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.image.add",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.moveToProcessed.move.error",
+			"destination_type": "queue",
+			"routing_key": "error.image.added",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.keywordInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.keyword.add",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.moveToProcessed.move",
+			"destination_type": "queue",
+			"routing_key": "image.added",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "imaging.moveToProcessed.move.error",
+			"destination_type": "queue",
+			"routing_key": "image.added.error",
+			"source": "imaging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.emailUpdating.addOrUpdate",
+			"destination_type": "queue",
+			"routing_key": "email.update",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.emailUpdated.writeNote",
+			"destination_type": "queue",
+			"routing_key": "email.updated",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.emailUpdating.addOrUpdate.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.update",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.emailUpdated.writeNote.error",
+			"destination_type": "queue",
+			"routing_key": "error.email.updated.writeNote",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.noteInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.note.add",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "latitude.noteInserting.add",
+			"destination_type": "queue",
+			"routing_key": "note.add",
+			"source": "latitude",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "letters.eDelivery.createNotes",
+			"destination_type": "queue",
+			"routing_key": "eDelivery.created",
+			"source": "letters",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "letters.eDelivery.createNotes.error",
+			"destination_type": "queue",
+			"routing_key": "error.eDelivery.createNotes",
+			"source": "letters",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "logging.bplAdding.writeLog",
+			"destination_type": "queue",
+			"routing_key": "bpl.adding",
+			"source": "logging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "logging.bplAdding.writeLog.error",
+			"destination_type": "queue",
+			"routing_key": "error.bpl.adding.writeLog",
+			"source": "logging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "vendorProcessTaskLog.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.vendorProcessTaskLog.add",
+			"source": "logging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "vendorProcessTaskLogSync.process",
+			"destination_type": "queue",
+			"routing_key": "vendorProcessTaskLog.add",
+			"source": "logging",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "muleTemplatesAzure.test.error",
+			"destination_type": "queue",
+			"routing_key": "error.test",
+			"source": "muleTemplatesAzure",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "muleTemplatesAzure.test",
+			"destination_type": "queue",
+			"routing_key": "test",
+			"source": "muleTemplatesAzure",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInserting.add",
+			"destination_type": "queue",
+			"routing_key": "bankAccount.add",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInserted.sendEmail",
+			"destination_type": "queue",
+			"routing_key": "bankAccount.added",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountCanceling.cancel",
+			"destination_type": "queue",
+			"routing_key": "bankAccount.cancel",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountCanceled.sendEmail",
+			"destination_type": "queue",
+			"routing_key": "bankAccount.cancelled",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInserting.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.bankAccount.add",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInserted.sendEmail.error",
+			"destination_type": "queue",
+			"routing_key": "error.bankAccount.added.sendEmail",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountCanceling.cancel.error",
+			"destination_type": "queue",
+			"routing_key": "error.bankAccount.cancel",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountCanceled.sendEmail.error",
+			"destination_type": "queue",
+			"routing_key": "error.bankAccount.cancelled.sendEmail",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInsertingRiskRate.add.error",
+			"destination_type": "queue",
+			"routing_key": "error.payment.bankAccountValidate",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "payment.bankAccountInsertingRiskRate.add",
+			"destination_type": "queue",
+			"routing_key": "payment.bankAccountValidate",
+			"source": "payment",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "poc.quorum1",
+			"destination_type": "queue",
+			"routing_key": "q1",
+			"source": "poc.quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "poc.quorum2",
+			"destination_type": "queue",
+			"routing_key": "q2",
+			"source": "poc.quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "statements.eDelivery.createNotes",
+			"destination_type": "queue",
+			"routing_key": "eDelivery.created",
+			"source": "statements",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"destination": "statements.eDelivery.createNotes.error",
+			"destination_type": "queue",
+			"routing_key": "error.eDelivery.createNotes",
+			"source": "statements",
+			"vhost": "/"
+		}
+	],
+	"queues": [
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.keywordInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.test1.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.tapeInfo.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.sendVoice.send.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.debtTransfer.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.innovis.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv.audCreate.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.payment.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fiserv.fdrhitlog.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.crAccts.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.tapeInfo.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.vendor.sync.lockpathvenminder.sub",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountCanceling.cancel.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.ccpa.createLetter",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.emailUpdating.addOrUpdate.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.fraud.note",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInsertingRiskRate.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInserting.add.reply",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note.latitude.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "CreateTicketFromAzure",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.shovel.test",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.updateStatus.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "poc.quorum2",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.SftpSent_error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.employer.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "statements.disputeCharge.createCase",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.sendVoice.send",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv.recon.process",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.syncLatitude.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountCanceling.cancel.reply",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.batchGL.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.vendor.sync.lockpathvenminder",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.bureau.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "logging.bplAdding.writeLog",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInsertingRiskRate.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.authUser.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.fraud.note.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.emailUpdated.writeNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.optOutApplicant.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.keywordInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.RetryExtractImage",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.shovel.test2",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.update.reply",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.note.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note.latitude.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv.audCreate.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.preciseIdData.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createNotes",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createAppEmails",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bplRecon.recon.process",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.account",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.updated.consentNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.test1",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.letter",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.pcpProtection.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.vendor.sync.venminder",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.payment.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "logging.bplAdding.writeLog.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ProcessExtract",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:EnterAccountNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.syncLatitude",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.innovis.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.bureau.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.barcodeInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.preciseIdData.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ProcessExtract_error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "letters.eDelivery.enrollEletters",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.postup.sent.emailrequest",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.rsaEnroll.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.createAccount.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv.acdvSync.process",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.sendText.send",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "vendorProcessTaskLogSync.process",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.debtTransfer.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.SftpSent",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.writeNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "letters.eDelivery.createNotes.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.postup.sent.emailrequest.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.postup.sent",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.writeNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.email.send.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.shovel.test.error",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.imageInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.batchApp.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.mfaRequested.send.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "statements.eDelivery.createNotes",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.demo.deadletterqueue",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.barcodeInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.sendOdsRequest",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountCanceling.cancel",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.pcpProtection.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountCanceled.sendEmail",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.additionalCard.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.account",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createEmails.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "muleTemplatesAzure.test",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:DocumentUploadImageMoved_error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.transactionHistory.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.noteInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.batchApp.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdating.updateEmail.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.optOutApplicant.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fraud.fraudRecordInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.mfaRequested.send",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.mktrQueue.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.postup.send",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdating.updateEmail",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.employer.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.updateEmail.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "vendorProcessTaskLog.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.creditQueue.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fraud.fraudRecordInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.populatePayments.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.letter",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "poc.quorum1",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createEmails",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.fraud.record.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.passwordChange.expirePassword",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.enrollEDelivery",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.updateStatus",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.batchGL.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.createAccount",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.emailUpdated.sendOdsRequest.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInserted.sendEmail",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "letters.eDelivery.createNotes",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.fraudVelocity.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.crAccts.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bjw.shovel.test2.error",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createAppEmails.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.sendText.send.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.note.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.FileMoved",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.add.reply",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.ccpa.createNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.address.addOrUpdate",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.note",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.added.consentNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.eDelivery.createNotes.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.ods",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "statements.eDelivery.createNotes.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.nonmonqueue",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.vendor.sync.lockpath",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.noteInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.decisionData.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.imageInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInserted.sendEmail.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.nonmonqueue",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication.contextualMessaging.unenroll",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.fraud.record",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.decisionData.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.addNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fiserv.fdrhitlog.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.addNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.moveToProcessed.move.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.ccpa.processCcpa",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.transactionHistory.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountCanceled.sendEmail.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.ods",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fraud.fraudRecordInserting.note.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.emailUpdated.writeNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv.audReceipt.process.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.documentInserting.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.additionalCard.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.moveToProcessed.move",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.multacct",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note.add",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.added.consentNote",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.mktrQueue.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "muleTemplatesAzure.test.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.debitcard.updated.consentNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.note",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.rsaEnroll.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.sendEmail",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.ccpa.createNote.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment.bankAccountInsertingRiskRate",
+			"type": "classic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.sendEmail.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ImageError",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.fraudVelocity.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:DocumentUploadImageMoved",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.postup.send.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.populatePayments",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.authUser.insert.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal.userCreated.updateEmail",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error.multacct",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude.emailUpdating.addOrUpdate",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.creditQueue.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.realTimeResponse.insert",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fraud.fraudRecordInserting.note",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition.email.send",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "statements.eDelivery.enrollEstatements",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging.documentInserting.add.error",
+			"type": "quorum",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"x-queue-type": "quorum"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo.ccpa.createLetter.error",
+			"type": "quorum",
+			"vhost": "/"
+		}
+	],
+	"parameters": [
+		{
+			"component": "vhost-limits",
+			"name": "limits",
+			"value": {
+				"max-connections": 500
+			},
+			"vhost": "/"
+		}
+	],
+	"policies": [],
+	"rabbitmq_version": "3.13.0",
+	"rabbit_version": "3.13.0",
+	"exchanges": [
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.notes.create",
+			"type": "direct",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "latitude",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.demo.deadletterqueueexchange",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "MassTransit:ReceiveFault",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "MassTransit:Fault",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {
+				"alternate-exchange": "com.premier.emergencyrelief.enroll.all"
+			},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll",
+			"type": "direct",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.SftpSent_error",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.notes.create.error",
+			"type": "direct",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetErrorDomainEvent",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email.error",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.RetryExtractImage",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.SftpSent",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bpq",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.FileMoved",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fiserv",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:EnterAccountNote",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.BusinessProcessLogRecon.Services:ReconReady",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "PremierDevOpsWorker.ApplicationMessages.Ado:CreateTicketFromAzureCommand",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bplRecon",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerCommunication",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "MassTransit:Fault--Premier.DocumentUpload.Domain.Contracts:IDocumentSetSftpSentDomainEvent--",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ImageError",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetSavedDomainEvent",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "imaging",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "statements",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acquisition",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.all",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.payment.error",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:DocumentUploadImageMoved_error",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "fraud",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.emergencyrelief.enroll.error",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "poc.quorum",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Domain.Contracts:IDocumentSetSftpSentDomainEvent",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerPortal",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "muleTemplatesAzure",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "MassTransit:Fault--Premier.DocumentUpload.Application.Contracts:IDocumentUploadImageMoved--",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "customerInfo",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Application.Contracts:IRetryExtract",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.Notes.Application.Contracts:IEnterAccountNoteCommand",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ProcessExtract",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.demo.deadletterqueueexchange.error",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "acdv",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note.error",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "CreateTicketFromAzure",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.note",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Domain.Contracts:IDocumentUploadImageMovedDomainEvent",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "MassTransit:Fault--Premier.DocumentUpload.Domain.Contracts:IDocumentSetSavedDomainEvent--",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "bplRecon.recon.process",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "logging",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.email",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Premier.DocumentUpload.Application.Contracts:IDocumentUploadImageMoved",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "letters",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "DocumentUpload:DocumentUpload.ProcessExtract_error",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "com.premier.vendor.sync",
+			"type": "topic",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "Notes:DocumentUploadImageMoved",
+			"type": "fanout",
+			"vhost": "/"
+		},
+		{
+			"arguments": {},
+			"auto_delete": false,
+			"durable": true,
+			"name": "payment",
+			"type": "topic",
+			"vhost": "/"
+		}
+	],
+	"users": [
+    {
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "limits": {},
+      "name": "guest",
+      "password_hash": "E+5LZSHPY/Z1nYhn3nNZ0uZdd9RR2DwjMpedmT4CktuuBsiO",
+      "tags": [
+        "administrator"
+      ]
+    }
+	],
+	"topic_permissions": [
+		{
+			"exchange": "",
+			"read": ".*",
+			"user": "guest",
+			"vhost": "/",
+			"write": ".*"
+		}
+	],
+	"vhosts": [
+		{
+			"limits": [
+				[
+					"max-connections",
+					500
+				]
+			],
+			"metadata": {
+				"description": "Default virtual host",
+				"tags": []
+			},
+			"name": "/"
+		}
+	],
+	"global_parameters": [
+		{
+			"name": "cluster_name",
+			"value": "rabbit@PBISFXDEV656"
+		}
+	]
+}
