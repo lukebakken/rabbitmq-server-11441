@@ -4,12 +4,8 @@ set -o errexit
 set -o pipefail
 # set -o xtrace
 
-docker_fresh='false'
-if [[ "$1" == 'fresh' ]]
-then
-    docker_fresh='true'
-fi
-readonly docker_fresh
+readonly rmq_version="${1:-3.13}"
+readonly docker_fresh="${2:-false}"
 
 set -o nounset
 
@@ -35,11 +31,11 @@ do
     if [[ $docker_fresh == 'true' ]]
     then
         docker compose build --no-cache --pull \
-            --build-arg 'RABBITMQ_DOCKER_TAG=rabbitmq:3.13-management' \
+            --build-arg "RABBITMQ_DOCKER_TAG=rabbitmq:$rmq_version-management" \
             --build-arg "SVC=$svc" "$svc"
     else
         docker compose build \
-            --build-arg 'RABBITMQ_DOCKER_TAG=rabbitmq:3.13-management' \
+            --build-arg "RABBITMQ_DOCKER_TAG=rabbitmq:$rmq_version-management" \
             --build-arg "SVC=$svc" "$svc"
     fi
 

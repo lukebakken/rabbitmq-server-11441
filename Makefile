@@ -1,7 +1,7 @@
 .PHONY: clean down up perms rmq-perms
 
 DOCKER_FRESH ?= false
-RABBITMQ_DOCKER_TAG ?= rabbitmq:3.12-management
+RABBITMQ_DOCKER_TAG ?= rabbitmq:3.11-management
 
 clean: perms
 	git clean -xffd
